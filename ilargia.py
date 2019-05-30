@@ -86,7 +86,7 @@ m = mastodon.status_post(title, None, images)
 data = open(images_all[1], 'rb')
 data = data.read()
 
-title = title.decode('utf-8')+"\n"
+#title = title.decode('utf-8')+"\n"
 
 file = open(sys.path[0]+'/twitter.credentials')
 j = load(file)
