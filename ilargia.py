@@ -20,8 +20,8 @@ local_time = localtime()
 
 year =  strftime("%Y", local_time)
 
-file = open(sys.path[0]+"/ilargia-"+year+".json")
-j = load(file)
+with open(sys.path[0]+"/ilargia-"+year+".json", 'r') as f:
+	j = load(f)
 
 local_time = strftime("%Y-%m-%d", local_time)
 
@@ -88,8 +88,8 @@ data = data.read()
 
 #title = title.decode('utf-8')+"\n"
 
-file = open(sys.path[0]+'/twitter.credentials')
-j = load(file)
+with open(sys.path[0]+"/twitter.credentials", 'r') as f:
+	j = load(f)
 
 api = TwitterAPI(j['CONSUMER_KEY'], j['CONSUMER_SECRET'], j['ACCESS_TOKEN_KEY'], j['ACCESS_TOKEN_SECRET'])
 r = api.request('media/upload', None, {'media': data})
