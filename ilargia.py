@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 # pip install TwitterAPI
@@ -43,7 +43,7 @@ image_path = sys.path[0]+"/images"
 if path.isdir(image_path):
 	files = listdir(image_path)
 else:
-	print "Karpeta "+image_path+" ez da existitzen"
+	print("Karpeta "+image_path+" ez da existitzen")
 	sys.exit()
 
 # irudi danak images dict-en sartun
@@ -64,15 +64,15 @@ for i in files:
 
 mastodon = Mastodon(
     access_token = sys.path[0]+"/mastodon.credentials",
-    api_base_url = 'https://mastodon.eus'
+    api_base_url = 'https://mastodon.jalgi.eus'
 )
 
 # ikusi ia baten bat badauen
 images_all = images
 len = len(images.keys())
 if len>0:
-        r = randint(0, j-1)
-        file = images[r]
+	r = randint(0, j-1)
+	file = images[r]
 	a = mastodon.media_post(file);
 	images = []
 	images.append([a.id])
@@ -98,8 +98,8 @@ media_id = r.json()['media_id']
 r = api.request('statuses/update', {'status':title+m.url, 'media_ids':media_id})
 
 if r.status_code == 200:
-	print "Txioa ondo bidali da ;)"
+	print("Txioa ondo bidali da ;)")
 else:
-	print "Errorea txioa bidaltzerakoan status code: "+r.status_code
+	print("Errorea txioa bidaltzerakoan status code: "+r.status_code)
 
 sys.exit()
