@@ -83,7 +83,7 @@ title = 'ilargi betie... 🐺🌕 #zitalbot'
 
 m = mastodon.status_post(title, None, images)
 
-data = open(images_all[1], 'rb')
+data = open(images_all[0], 'rb')
 data = data.read()
 
 #title = title.decode('utf-8')+"\n"
@@ -95,7 +95,7 @@ api = TwitterAPI(j['CONSUMER_KEY'], j['CONSUMER_SECRET'], j['ACCESS_TOKEN_KEY'],
 r = api.request('media/upload', None, {'media': data})
 media_id = r.json()['media_id']
 
-r = api.request('statuses/update', {'status':title+m.url, 'media_ids':media_id})
+r = api.request('statuses/update', {'status':title+"\n"+m.url, 'media_ids':media_id})
 
 if r.status_code == 200:
 	print("Txioa ondo bidali da ;)")
