@@ -64,7 +64,7 @@ for i in files:
 
 mastodon = Mastodon(
     access_token = sys.path[0]+"/mastodon.credentials",
-    api_base_url = 'https://mastodon.jalgi.eus'
+    api_base_url = 'https://botsin.space'
 )
 
 # ikusi ia baten bat badauen
