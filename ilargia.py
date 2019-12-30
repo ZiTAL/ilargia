@@ -83,7 +83,7 @@ title = 'ilargi betie... 🐺🌕 #zitalbot'
 
 m = mastodon.status_post(title, None, images)
 
-data = open(images_all[0], 'rb')
+data = open(images_all[2], 'rb') # 01.gif
 data = data.read()
 
 #title = title.decode('utf-8')+"\n"
