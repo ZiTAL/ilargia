@@ -9,12 +9,12 @@ import sys
 from json import load
 from time import localtime
 from time import strftime
+from time import sleep
 from os import path
 from os import listdir
 from random import randint
-from TwitterAPI import TwitterAPI
+#from TwitterAPI import TwitterAPI
 from mastodon import Mastodon
-from pprint import pprint
 
 local_time = localtime()
 
@@ -79,6 +79,9 @@ if len>0:
 else:
 	images = []
 
+# 30 segundu utziko diogu mastodonera irudi/bideoa igotzeko...
+sleep(30)
+
 title = 'ilargi betie... 🐺🌕 #zitalbot'
 
 m = mastodon.status_post(title, None, images)
@@ -86,6 +89,7 @@ m = mastodon.status_post(title, None, images)
 data = open(images_all[2], 'rb') # 01.gif
 data = data.read()
 
+"""
 #title = title.decode('utf-8')+"\n"
 
 with open(sys.path[0]+"/twitter.credentials", 'r') as f:
@@ -102,4 +106,5 @@ if r.status_code == 200:
 else:
 	print("Errorea txioa bidaltzerakoan status code: "+r.status_code)
 
+"""
 sys.exit()
