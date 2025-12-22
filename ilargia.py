@@ -77,7 +77,7 @@ else:
 # 30 segundu utziko diogu mastodonera irudi/bideoa igotzeko...
 sleep(30)
 
-title = f"{info['name']}\n🌕\n#zitalbot"
+title = f"{info['name']} 🌕\n\n#zitalbot"
 m     = mastodon.status_post(title, None, images)
 data  = open(images_all[2], 'rb') # 01.gif
 data  = data.read()
