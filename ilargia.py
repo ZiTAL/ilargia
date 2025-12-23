@@ -78,6 +78,8 @@ else:
 sleep(30)
 
 title = f"{info['name']} 🌕\n\n#zitalbot"
+print(title)
+
 m     = mastodon.status_post(title, None, images)
 data  = open(images_all[2], 'rb') # 01.gif
 data  = data.read()
